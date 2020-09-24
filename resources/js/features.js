@@ -1,5 +1,5 @@
 Nova.booting((Vue) => {
-    const components = name => (_.find(Nova.config.resources, resource => resource.uriKey === name).components || {}),
+    const components = name => ((_.find(Nova.config.resources, resource => resource.uriKey === name)||{}).components || {}),
         render = (context, component) => component ? context._c(component, context.data, context.children) : context._c('div'),
         comp = (name) => ({
             functional: true,
